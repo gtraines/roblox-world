@@ -1,0 +1,22 @@
+{
+  "name": "roblox-world",
+  "servePort": 8000,
+  "partitions": {
+    "ServerScriptService": {
+      "path": "regenville/src/ServerScriptService/VocationManagement",
+      "target": "ServerScriptService.VocationManagement"
+    },
+    "LightingManagement": {
+      "path": "regenville/src/ServerScriptService/LightingManagement",
+      "target": "ServerScriptService.LightingManagement"
+    },
+    "AppStart": {
+      "path": "regenville/src/ServerScriptService/AppStart",
+      "target": "ServerScriptService.AppStart"
+    },
+    "SharedLibs": {
+      "path": "regenville/src/ServerScriptService/SharedLibs",
+      "target": "ServerScriptService.SharedLibs"
+    }
+  }
+}
