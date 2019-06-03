@@ -1,6 +1,9 @@
 local module = {}
 
-breadthFirst = function(entity, levelsRemaining, funcToRunOnEachEntity)
+function module.breadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
+    -- @param [Instance] entity The Parts to weld. Should be anchored to prevent really horrible results.
+	-- @param [Number] levelsRemaining The part to weld the model to (can be in the model).
+	-- @param [function] The function to run on each entity
 	if (levelsRemaining <= 0 or entity == nil) then
 		return
 	end

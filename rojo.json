@@ -17,6 +17,10 @@
     "SharedLibs": {
       "path": "regenville/src/ServerScriptService/SharedLibs",
       "target": "ServerScriptService.SharedLibs"
+    },
+    "Repositories": {
+      "path": "regenville/src/ServerScriptService/Repositories",
+      "target": "ServerScriptService.Repositories"
     }
   }
 }
