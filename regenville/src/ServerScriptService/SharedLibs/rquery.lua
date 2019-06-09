@@ -1,8 +1,8 @@
 local module = {}
 
 function module.breadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
-    -- @param [Instance] entity The Parts to weld. Should be anchored to prevent really horrible results.
-	-- @param [Number] levelsRemaining The part to weld the model to (can be in the model).
+    -- @param [Instance] entity entity to start search
+	-- @param [Number] levelsRemaining Levels of entities deep to continue searching
 	-- @param [function] The function to run on each entity
 	if (levelsRemaining <= 0 or entity == nil) then
 		return
@@ -16,4 +16,7 @@ function module.breadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
     end
 end
 
+function module.itWorked(msg) 
+	print(msg)
+end
 return module

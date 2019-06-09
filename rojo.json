@@ -21,6 +21,10 @@
     "Repositories": {
       "path": "regenville/src/ServerScriptService/Repositories",
       "target": "ServerScriptService.Repositories"
+    },
+    "ServiceFinder": {
+      "path": "regenville/src/ServerScriptService/ServiceFinder",
+      "target": "ServerScriptService.ServiceFinder"
     }
   }
 }
