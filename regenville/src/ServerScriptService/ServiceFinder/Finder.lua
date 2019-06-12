@@ -1,4 +1,15 @@
+-- 
+-- 
+-- 
 
+--[[
+    Usage example: 
+    	local svcFinder = require(game
+	:GetService("ServerScriptService")
+	:WaitForChild("ServiceFinder")
+	:WaitForChild("Finder"))
+    local rq = svcFinder:FindService("RQuery")
+]]
 
 local ServerScriptService = game:GetService("ServerScriptService")
 
@@ -20,6 +31,25 @@ end
 
 local module = {}
 
-module["RegisteredServices"] = deduplicatedModules
+module["RegisteredServices"] = dedupedModules
+
+function module:FindService(serviceName)
+    if self.RegisteredServices ~= nil then
+        -- First try
+        local foundService = self.RegisteredServices[serviceName]
+        if foundService ~= nil then
+            return foundService
+        end
+
+        -- Take another shot
+        foundService = self.RegisteredServices[string.lower(serviceName)]
+        if foundService ~= nil then
+            return foundService
+        end
+
+        error("Service " .. serviceName .. " not found")
+        return nil
+    end
+end
 
 return module

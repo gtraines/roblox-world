@@ -1,13 +1,15 @@
-local RoType = require(script.Parent:WaitForChild("rotype"))
-local Linq = require(script.Parent:WaitForChild("linq"))
-local RQuery = require(script.Parent:WaitForChild("rquery"))
 local EzConfig = require(script.Parent:WaitForChild("easyconfig"))
+local Linq = require(script.Parent:WaitForChild("linq"))
+local RoType = require(script.Parent:WaitForChild("rotype"))
+local RQuery = require(script.Parent:WaitForChild("rquery"))
+local Wraptor = require(script.Parent:WaitForChild("wraptor"))
 
 local module = {}
 
-module["RoType"] = RoType
-module["Linq"] = Linq
-module["RQuery"] = RQuery
 module["EzConfig"] = EzConfig
+module["Linq"] = Linq
+module["RoType"] = RoType
+module["RQuery"] = RQuery
+module["Wraptor"] = Wraptor
 
 return module

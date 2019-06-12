@@ -1,6 +1,6 @@
 local module = {}
 
-function module.breadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
+function module.BreadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
     -- @param [Instance] entity entity to start search
 	-- @param [Number] levelsRemaining Levels of entities deep to continue searching
 	-- @param [function] The function to run on each entity
@@ -12,8 +12,30 @@ function module.breadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
 	
 	for idx, entitiesChild in pairs(entityChilds) do
 		funcToRunOnEachEntity(entitiesChild)
-		breadthFirst(entitiesChild, levelsRemaining - 1, funcToRunOnEachEntity)
+		module.BreadthFirst(entitiesChild, levelsRemaining - 1, funcToRunOnEachEntity)
     end
+end
+
+function module.FindSiblingNamed( part, siblingName )
+	if part.Parent ~= nil then
+		if part.Parent:FindFirstChild( siblingName, false ) ~= nil then
+			return part.Parent:FindFirstChild( siblingName, false )
+		end
+	end
+
+	return nil
+end
+
+function module.AttachedHumanoidOrNil(part)
+	if module.FindSiblingNamed(part, "Humanoid") ~= nil then
+		return module.FindSiblingNamed(part, "Humanoid")
+	elseif part:FindFirstAncestor("Humanoid") ~= nil then
+		return part:FindFirstAncestor("Humanoid")
+	elseif part:FindFirstChild( "Humanoid", false ) ~= nil then
+		return part:FindFirstChild( "Humanoid", false )
+	else
+		return nil
+	end
 end
 
 function module.itWorked(msg) 
