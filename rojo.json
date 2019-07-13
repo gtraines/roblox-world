@@ -25,6 +25,10 @@
     "ServiceFinder": {
       "path": "regenville/src/ServerScriptService/ServiceFinder",
       "target": "ServerScriptService.ServiceFinder"
+    },
+    "EmergencyVehicleEvents": {
+      "path": "regenville/src/ReplicatedStorage/EmergencyVehicleEvents",
+      "target": "ReplicatedStorage.EmergencyVehicleEvents"
     }
   }
 }

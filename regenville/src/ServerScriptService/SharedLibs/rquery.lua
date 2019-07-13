@@ -16,7 +16,7 @@ function module.BreadthFirst(entity, levelsRemaining, funcToRunOnEachEntity)
     end
 end
 
-function module.FindSiblingNamed( part, siblingName )
+function module.FindFirstSibling( part, siblingName )
 	if part.Parent ~= nil then
 		if part.Parent:FindFirstChild( siblingName, false ) ~= nil then
 			return part.Parent:FindFirstChild( siblingName, false )
@@ -27,8 +27,8 @@ function module.FindSiblingNamed( part, siblingName )
 end
 
 function module.AttachedHumanoidOrNil(part)
-	if module.FindSiblingNamed(part, "Humanoid") ~= nil then
-		return module.FindSiblingNamed(part, "Humanoid")
+	if module.FindFirstSibling(part, "Humanoid") ~= nil then
+		return module.FindFirstSibling(part, "Humanoid")
 	elseif part:FindFirstAncestor("Humanoid") ~= nil then
 		return part:FindFirstAncestor("Humanoid")
 	elseif part:FindFirstChild( "Humanoid", false ) ~= nil then
